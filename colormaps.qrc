@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+  <file>colormaps/CET-L03.png</file>
+  <file>colormaps/CET-L04.png</file>
+  <file>colormaps/CET-L08.png</file>
+  <file>colormaps/CET-L19.png</file>
+  <file>colormaps/CET-L20.png</file>
+</qresource>
+</RCC>
