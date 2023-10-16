@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.1.0)
 
-project(ping_viewer)
+project(sonardyne_raw)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_AUTOMOC ON)
@@ -44,3 +44,17 @@ add_executable(echogram_viewer
 )
 
 target_link_libraries(echogram_viewer Qt5::Widgets Qt5::Charts)
+
+
+find_package(catkin REQUIRED COMPONENTS rosbag marine_acoustic_msgs tf2_msgs)
+
+include_directories(${catkin_INCLUDE_DIRS})
+
+add_executable(pings_to_bag
+  pings_to_bag.cpp
+  ping.cpp
+  ping_base.cpp
+  raw_ping.cpp
+)
+
+target_link_libraries(pings_to_bag ${catkin_LIBRARIES})
